@@ -23,7 +23,3 @@ Route::get('checkout/success', [FrontendController::class, 'success'])->name('ch
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

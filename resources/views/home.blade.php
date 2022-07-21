@@ -1,23 +1,55 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+  <head>
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    @include('backend.layout.head')
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+  </head>
+  <body>
 
-                    {{ __('You are logged in!') }}
-                </div>
+    @include('backend.layout.navbar')
+
+    <div class="az-content az-content-dashboard">
+      <div class="container">
+        <div class="az-content-body">
+          <div class="az-dashboard-one-title">
+            <div>
+              <h2 class="az-dashboard-title">Hi, welcome back!</h2>
+              <p class="az-dashboard-text">Your web analytics dashboard template.</p>
             </div>
-        </div>
-    </div>
-</div>
-@endsection
+            <div class="az-content-header-right">
+              <div class="media">
+                <div class="media-body">
+                  <label>Start Date</label>
+                  <h6>Oct 10, 2018</h6>
+                </div><!-- media-body -->
+              </div><!-- media -->
+              <div class="media">
+                <div class="media-body">
+                  <label>End Date</label>
+                  <h6>Oct 23, 2018</h6>
+                </div><!-- media-body -->
+              </div><!-- media -->
+              <div class="media">
+                <div class="media-body">
+                  <label>Event Category</label>
+                  <h6>All Categories</h6>
+                </div><!-- media-body -->
+              </div><!-- media -->
+              <a href="" class="btn btn-purple">Export</a>
+            </div>
+          </div><!-- az-dashboard-one-title -->
+
+          <div class="az-dashboard-nav">
+          </div>
+
+          @yield('content')
+        </div><!-- az-content-body -->
+      </div>
+    </div><!-- az-content -->
+
+
+    {{-- script --}}
+    @include('backend.layout.script')
+  </body>
+</html>
