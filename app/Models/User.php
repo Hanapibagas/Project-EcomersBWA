@@ -36,26 +36,31 @@ class User extends Authenticatable
         'two_factor_secret',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    // /**
+    //  * The attributes that should be cast.
+    //  *
+    //  * @var array<string, string>
+    //  */
+    // protected $casts = [
+    //     'email_verified_at' => 'datetime',
+    // ];
 
-    protected $appends = [
-        'profile_photo_url',
-    ];
+    // /**
+    //  * The attributes that should be cast.
+    //  *
+    //  * @var array<string, string>
+    //  */
+    // protected $appends = [
+    //     'profile_photo_url',
+    // ];
 
     public function transactions()
     {
-        return $this->hasMany(Transaction::class, 'User_id', 'id');
+        return $this->hasMany(Transaction::class, 'users_id', 'id');
     }
 
     public function carts()
     {
-        return $this->hasMany(Cart::class, 'User_id', 'id');
+        return $this->hasMany(Cart::class, 'users_id', 'id');
     }
 }
